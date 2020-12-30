@@ -47,8 +47,10 @@
         <ul >
           <!-- <ng-container *ngFor="let branchCommit of branchCommitList"> -->
             <li  style="cursor: pointer; " >
-             Autor: <b>{{branchCommitList.commit.author.name}}</b> &nbsp;&nbsp;&nbsp; {{branchCommitList.commit.author.date}}<br>
-             Mensaje: <b>{{branchCommitList.commit.message}}</b>
+             Autor: <b>{{branchCommitList.commit.author.name}}</b> &nbsp;&nbsp;&nbsp; mail: <b>{{branchCommitList.commit.author.email}}</b> <br>
+             {{branchCommitList.commit.author.date}}<br>
+             Mensaje: <b>{{branchCommitList.commit.message}}</b><br>
+             # de archivos: <b>{{branchCommitList.files.length}}</b>
             </li>
           <!-- </ng-container> -->
         </ul>
