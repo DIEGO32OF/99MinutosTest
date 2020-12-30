@@ -1,0 +1,6 @@
+[1229/213238.937:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1230/080215.367:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1230/080215.382:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1230/080215.382:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1230/080215.383:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1230/080219.260:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\queNu\AppData\Local\Temp\karma-21367677\Crashpad\attachments\ed05da96-7148-4aec-a4a4-d09f332ba886: The system cannot find the path specified. (0x3)
