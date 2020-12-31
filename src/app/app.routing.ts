@@ -3,14 +3,13 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {BranchesComponent} from './branches/branches.component';
 import { PullsComponent } from './pulls/pulls.component';
-//import { CommitBranchComponent } from './commit-branch/commit-branch.component';
+import { PullListComponent } from './pull-list/pull-list.component';
 
 const appRoutes:Routes=[
     {path:'', component: BranchesComponent},
     {path:'branches', component: BranchesComponent},
-    {path:'pulls', component: PullsComponent},
-    
-   // {path:'commit', component: CommitBranchComponent},
+    {path:'pulls', component: PullsComponent},    
+    {path:'listpull', component: PullListComponent}
     
 ];
 

@@ -15,6 +15,7 @@ export class PullsComponent implements OnInit {
   public selectedBaseBranch: string = '';
   public selectedCompareBranch: string = '';
   public errorCreatePull: string = '';
+  public succesCreatePull: string = '';
   
   constructor(private _getApis: GetApiService) { }
 
@@ -45,9 +46,11 @@ export class PullsComponent implements OnInit {
   if(title != '' && description != ''){
   this._getApis.createPullRequest(title, description, this.selectedBaseBranch, this.selectedCompareBranch).subscribe( 
     (response: any) => {
-console.log(response)
+      
+      this.succesCreatePull = 'Base: '+JSON.stringify(response.base)+ 'Head:' +JSON.stringify(response.head);
   },
-   error => {     
+   error => {     console.log(error
+    )
      this.errorCreatePull = error.error.errors[0].message;
 
     } 
@@ -56,7 +59,7 @@ console.log(response)
 else
 alert('se debe de insertar un titulo y descripcion');
 }
-catch(ex){console.log(ex, 'jlkhkjhkjh')}
+catch(ex){console.log(ex)}
   }
 
 }

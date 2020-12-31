@@ -1,0 +1,25 @@
+<html lang="es">
+<head>
+</head>
+<body>
+
+  <div style="height: 100px;">
+  </div>
+  <div style="padding: 20px;">
+  <h2>Pull Request</h2><hr/>
+<p></p>
+
+<h4>{{messagePullEmpty}}</h4>
+  <ul >
+    <ng-container *ngFor="let pull of pullList">
+      <li  style="cursor: pointer; " >
+        Autor: <b>{{pull.user.login}}</b> &nbsp;&nbsp;&nbsp; titulo:<b>{{pull.title}}</b> <br>
+        Descripcion: <b>{{pull.body}}</b> <br>
+        Estatus: <b>{{pull.state}}</b> &nbsp;&nbsp;&nbsp;<button type="button" *ngIf="pull.state == 'open'" class="btn btn-info" (click)="closePull(branch.commit.url)">Cerrar Pull</button>
+      </li>
+    </ng-container>
+  </ul>
+  
+</div>
+</body>
+</html>

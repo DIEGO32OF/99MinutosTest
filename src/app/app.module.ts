@@ -8,6 +8,7 @@ import { BranchesComponent } from './branches/branches.component';
 import { RouterModule} from '@angular/router';
 import {routing,appRoutingProviders} from './app.routing';
 import { PullsComponent } from './pulls/pulls.component';
+import { PullListComponent } from './pull-list/pull-list.component';
 
 
 
@@ -15,7 +16,8 @@ import { PullsComponent } from './pulls/pulls.component';
   declarations: [
     AppComponent,
     BranchesComponent,
-    PullsComponent
+    PullsComponent,
+    PullListComponent
     
   ],
   imports: [

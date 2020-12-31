@@ -29,8 +29,7 @@ export class BranchesComponent implements OnInit {
 
   openCommits(urlCommit){    
     this._getApis.getCommitsFromBranch(urlCommit).subscribe(
-      (listCommitBranch: any) =>{
-           console.log(listCommitBranch)     
+      (listCommitBranch: any) =>{              
         this.branchCommitList = listCommitBranch;
         $('#myModalListCommit').modal('show');
         

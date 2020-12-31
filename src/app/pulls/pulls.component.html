@@ -3,32 +3,12 @@
 </head>
 <body>
 
-  <div class="navbar navbar-inverse navbar-fixed-top" style="padding:5px">
-    <div class="container">
 
-      <div class="navbar-header">
-
-        <div class="pull-left">
-          <ul id="menu" style="margin-top:10px">
-            <a [routerLink]="['/pulls']"><span >Pull request</span></a>
-          </ul>         
-        </div>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li style="color: white;" ><a [routerLink]="['/branches']" >Ramas&nbsp;&nbsp;&nbsp;</a></li>
-          
-         
-        </ul>
-      </div>    
-    </div>
-  </div>
 
  <div style="height: 100px;">
 </div>
 <div style="padding: 20px;">
-&nbsp;<h2>Pull Request</h2><hr/>
+&nbsp;<h2>Crear Pull Request</h2><hr/>
 Base: <select class="custom-select" (change)="changeBranchBase($event)" >
   <option value="" disabled>elige la rama base</option>
   <option *ngFor="let nameBranchs of branchList" [value]="nameBranchs">{{nameBranchs}}</option>
@@ -53,6 +33,7 @@ Compare: <select class="custom-select" (change)="changeBranchCompare($event)" >
         <input type="text" class="form-control" id="titlePull" placeholder="Ingresa un titulo" [(ngModel)]="valueTitle" /><br>
         <textarea class="form-control" id="descPull" name="message" placeholder="Descripcion" rows="5" [(ngModel)]="valueDescr">Descripcion</textarea>
         <p></p>
+        <span style="color: green;">{{succesCreatePull}}</span><br>
         <span style="color: red;">{{errorCreatePull}}</span><br>
         <button type="button" class="btn btn-primary" (click)="createPullRequest()">Crear Pull Request</button>
       </div>
@@ -63,7 +44,5 @@ Compare: <select class="custom-select" (change)="changeBranchCompare($event)" >
 </div>
 
 </body>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="../../../../assets/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../../assets/js/jquery.easing.1.3.js"></script>
+
     </html>
