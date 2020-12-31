@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BranchesComponent } from './branches/branches.component';
@@ -20,7 +21,8 @@ import { PullsComponent } from './pulls/pulls.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

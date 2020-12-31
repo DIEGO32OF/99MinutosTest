@@ -29,11 +29,11 @@
 </div>
 <div style="padding: 20px;">
 &nbsp;<h2>Pull Request</h2><hr/>
-Base: <select class="custom-select" (change)="changeBranchBase($event)" formControlName="basePull">
+Base: <select class="custom-select" (change)="changeBranchBase($event)" >
   <option value="" disabled>elige la rama base</option>
   <option *ngFor="let nameBranchs of branchList" [value]="nameBranchs">{{nameBranchs}}</option>
 </select> &nbsp;&nbsp;&nbsp;
-Compare: <select class="custom-select" (change)="changeBranchCompare($event)" formControlName="ComparePull">
+Compare: <select class="custom-select" (change)="changeBranchCompare($event)" >
   <option value="" disabled>elige la rama Compare</option>
   <option *ngFor="let nameBranchs of branchList" [value]="nameBranchs">{{nameBranchs}}</option>
 </select>
@@ -50,10 +50,11 @@ Compare: <select class="custom-select" (change)="changeBranchCompare($event)" fo
         <h4 class="modal-title">Ingresa Datos</h4>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" id="titlePull" placeholder="Ingresa un titulo" /><br>
-        <textarea class="form-control" id="descPull" name="message" placeholder="Descripcion" rows="5"></textarea>
+        <input type="text" class="form-control" id="titlePull" placeholder="Ingresa un titulo" [(ngModel)]="valueTitle" /><br>
+        <textarea class="form-control" id="descPull" name="message" placeholder="Descripcion" rows="5" [(ngModel)]="valueDescr">Descripcion</textarea>
         <p></p>
-        <button type="button" class="btn btn-primary" (click)="createPullRequest()">Evaluar</button>
+        <span style="color: red;">{{errorCreatePull}}</span><br>
+        <button type="button" class="btn btn-primary" (click)="createPullRequest()">Crear Pull Request</button>
       </div>
     </div>
     <!-- /.modal-content -->

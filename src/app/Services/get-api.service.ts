@@ -26,10 +26,16 @@ export class GetApiService {
 
   createPullRequest(title, description, Base, Head){
     let params=JSON.stringify({title: title, body: description, base:Base, head:Head });    
-    let headers = new HttpHeaders({ 'Accept': 'application/vnd.github.v3+json',  'Authorization': 'token e491927e34ced646f4c434465198b101d3361ef8' });
+    let headers = new HttpHeaders({ 'Accept': 'application/vnd.github.v3+json',  'Authorization': 'token 40459b37311e2d4fd029eb200093b8326379e0a2' });
     //let headers = new HttpHeaders({ 'Accept': 'application/vnd.github.v3+json'});
-    console.log(params, headers)
-    return this._http.post(this.urlBranch+'pulls?access_token=e491927e34ced646f4c434465198b101d3361ef8', params,  { headers: headers })
+    
+    return this._http.post(this.urlBranch+'pulls?access_token=40459b37311e2d4fd029eb200093b8326379e0a2', params,  { headers: headers })
+  }
+
+  getAllPullRequest(){
+    let headers = new HttpHeaders({ 'Accept': 'application/vnd.github.v3+json',  'Authorization': 'token 40459b37311e2d4fd029eb200093b8326379e0a2' });
+        return this._http.get(this.urlBranch+'pulls?states=all',   { headers: headers })
+
   }
 
   
