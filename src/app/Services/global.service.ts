@@ -1,7 +1,7 @@
 export let GLOBAL={
 
 	url:'https://api.github.com/repos/DIEGO32OF/99MinutosTest/',
-	token: '6835adbf403ea3e90198324f75376fb0ab4b7513'
+	token: 'b5e894cf6e197a2d4f11e84f0e181218e99d85a2'
 	
 	
 }
