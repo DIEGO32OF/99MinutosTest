@@ -27,33 +27,33 @@
 
  <div style="height: 100px;">
 </div>
+<div style="padding: 20px;">
 &nbsp;<h2>Pull Request</h2><hr/>
-  <ul >
-  <ng-container *ngFor="let branch of branchList">
-    <li  style="cursor: pointer; " >
-      Rama: <b>{{branch.name}}</b> &nbsp;&nbsp;&nbsp;  <button type="button" class="btn btn-info" (click)="openCommits(branch.commit.url)">Ver Commits</button>
-    </li>
-  </ng-container>
-</ul>
- 
-<div class="modal fade" id="myModalListCommit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+Base: <select class="custom-select" (change)="changeBranchBase($event)" formControlName="basePull">
+  <option value="" disabled>elige la rama base</option>
+  <option *ngFor="let nameBranchs of branchList" [value]="nameBranchs">{{nameBranchs}}</option>
+</select> &nbsp;&nbsp;&nbsp;
+Compare: <select class="custom-select" (change)="changeBranchCompare($event)" formControlName="ComparePull">
+  <option value="" disabled>elige la rama Compare</option>
+  <option *ngFor="let nameBranchs of branchList" [value]="nameBranchs">{{nameBranchs}}</option>
+</select>
+<p></p>
+<button type="button" class="btn btn-info" (click)="openModalTitle()">Continuar</button>
+
+
+</div>
+<div class="modal fade" id="myModalCreatePull" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Commits por branch</h4>
+        <h4 class="modal-title">Ingresa Datos</h4>
       </div>
       <div class="modal-body">
-        <div *ngIf="branchCommitList">
-        <ul >
-          <!-- <ng-container *ngFor="let branchCommit of branchCommitList"> -->
-            <li  style="cursor: pointer; " >
-             Autor: <b>{{branchCommitList.commit.author.name}}</b> &nbsp;&nbsp;&nbsp; {{branchCommitList.commit.author.date}}<br>
-             Mensaje: <b>{{branchCommitList.commit.message}}</b>
-            </li>
-          <!-- </ng-container> -->
-        </ul>
-      </div>
+        <input type="text" class="form-control" id="titlePull" placeholder="Ingresa un titulo" /><br>
+        <textarea class="form-control" id="descPull" name="message" placeholder="Descripcion" rows="5"></textarea>
+        <p></p>
+        <button type="button" class="btn btn-primary" (click)="createPullRequest()">Evaluar</button>
       </div>
     </div>
     <!-- /.modal-content -->
